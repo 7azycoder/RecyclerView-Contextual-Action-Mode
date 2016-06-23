@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnLongClickListener{
     boolean is_in_action_mode =false;
     TextView counter_text_view;
     RecyclerView recyclerView;
@@ -53,6 +53,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        toolbar.getMenu().clear();//clear mainactivity menu
+        toolbar.inflateMenu(R.menu.menu_action_mode);//inflate action mode menu
+        counter_text_view.setVisibility(View.VISIBLE); //make textView visible on it
+        is_in_action_mode = true;//make checkbox visible
+        adapter.notifyDataSetChanged();//notify adapter about this  change
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return true;
     }
 }

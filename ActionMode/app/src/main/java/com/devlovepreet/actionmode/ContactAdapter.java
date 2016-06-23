@@ -1,6 +1,7 @@
 package com.devlovepreet.actionmode;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +62,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         TextView Name,Email;
         CheckBox checkBox;
         MainActivity mainActivity;
+        CardView cardView;
         public  ContactViewHolder(View itemView,MainActivity mainActivity)
         {
             super(itemView);
@@ -69,6 +71,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             Email = (TextView) itemView.findViewById(R.id.email);
             checkBox = (CheckBox) itemView.findViewById(R.id.check_list_item);
             this.mainActivity = mainActivity;
+            cardView = (CardView) itemView.findViewById(R.id.cardView);
+            cardView.setOnLongClickListener(mainActivity);
         }
 
     }
