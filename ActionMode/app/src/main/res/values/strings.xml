@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Action Mode</string>
+    <string-array name="name">
+        <item>"Lovepreet Singh"</item>
+        <item>"Avii Samra"</item>
+        <item>"Lovey Singh"</item>
+        <item>"Dheeraj Asnani"</item>
+        <item>"Chetan Mann"</item>
+        <item>"Disha Shokeen"</item>
+        <item>"Akanksha Ahuja"</item>
+        <item>"Ishu CHoudhary"</item>
+        <item>"Jagmeet Singh"</item>
+        <item>"Gurpreet Singh"</item>
+        <item>"Lovepreet Singh"</item>
+        <item>"Avii Samra"</item>
+        <item>"Lovey Singh"</item>
+        <item>"Dheeraj Asnani"</item>
+    </string-array>
+    <string-array name="email">
+        <item>"lovepreet@gmail.com"</item>
+        <item>"asamra@gmail.com"</item>
+        <item>"lovey@yahoo.com"</item>
+        <item>"asnani@yahoo.com"</item>
+        <item>"chm@gmail.com"</item>
+        <item>"disha@yahoo.com"</item>
+        <item>"akki@yahoo.com"</item>
+        <item>"ishu@gmail.com"</item>
+        <item>"jaggu@gmail.com"</item>
+        <item>"preet@gmail.com"</item>
+        <item>"lovepreet@gmail.com"</item>
+        <item>"asamra@gmail.com"</item>
+        <item>"lovey@yahoo.com"</item>
+        <item>"asnani@yahoo.com"</item>
+    </string-array>
 </resources>
