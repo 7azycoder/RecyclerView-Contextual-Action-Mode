@@ -56,7 +56,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         return adapter_list.size();
     }
 
-    public  static  class  ContactViewHolder extends  RecyclerView.ViewHolder
+    public  static  class  ContactViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener
     {
         ImageView img;
         TextView Name,Email;
@@ -73,7 +73,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             this.mainActivity = mainActivity;
             cardView = (CardView) itemView.findViewById(R.id.cardView);
             cardView.setOnLongClickListener(mainActivity);
+            checkBox.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+            mainActivity.prepareSelection(v,getAdapterPosition());
+        }
     }
 }
