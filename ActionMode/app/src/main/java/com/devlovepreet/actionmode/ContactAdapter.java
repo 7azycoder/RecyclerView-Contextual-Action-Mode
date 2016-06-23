@@ -39,7 +39,15 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         holder.img.setImageResource(adapter_list.get(position).getImg_id());
         holder.Name.setText(adapter_list.get(position).getName());
         holder.Email.setText(adapter_list.get(position).getEmail());
-
+        if(!mainActivity.is_in_action_mode)
+        {
+            holder.checkBox.setVisibility(View.GONE);
+        }
+        else
+        {
+            holder.checkBox.setVisibility(View.VISIBLE);
+            holder.checkBox.setChecked(false);
+        }
     }
 
     @Override
