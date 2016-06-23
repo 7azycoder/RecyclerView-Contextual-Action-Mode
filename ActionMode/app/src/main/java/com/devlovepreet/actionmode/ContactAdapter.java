@@ -81,4 +81,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             mainActivity.prepareSelection(v,getAdapterPosition());
         }
     }
+    public  void updateAdapter(ArrayList<Contact> list)
+    {
+        for(Contact contact:list)
+        {
+            adapter_list.remove(contact);
+        }
+        notifyDataSetChanged();
+    }
 }

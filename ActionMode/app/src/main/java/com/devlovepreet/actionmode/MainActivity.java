@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -97,5 +98,33 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         {
             counter_text_view.setText(counter+" items selected");
         }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.item_delete)
+        {
+            ContactAdapter contactAdapter = (ContactAdapter) adapter;
+            contactAdapter.updateAdapter(selection_list);
+            clearActionMode();
+        }
+        else if(item.getItemId()== android.R.id.home)
+        {
+            clearActionMode();
+            adapter.notifyDataSetChanged();
+        }
+        return true;
+    }
+    public void clearActionMode()
+    {
+        is_in_action_mode = false;
+        toolbar.getMenu().clear();
+        toolbar.inflateMenu(R.menu.menu_activity_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        counter_text_view.setVisibility(View.GONE);
+        counter_text_view.setText(" 0 item selected");
+        counter = 0;
+        selection_list.clear();
     }
 }
